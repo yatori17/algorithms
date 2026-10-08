@@ -34,9 +34,10 @@ int main() {
     saco.remove('B');
 
     std::cout << "--- Iterando Apos Remocao ---\n";
+
+    std::cout << "--- Iterando (Frente para Tras) ---\n";
     saco.reinicia_itera();
-    while (saco.itera(elemento)) {
-        // Como o B saiu e o ultimo (D) tomou o lugar, a ordem será: A D C
+    while (saco.itera(&elemento)) { // Passamos o endereço de memória (&)
         std::cout << elemento << " ";
     }
     std::cout << "\n";

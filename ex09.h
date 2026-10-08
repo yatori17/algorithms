@@ -63,9 +63,9 @@ struct SacoVaiEVem {
         indice_itera = 0;
     }
 
-    bool itera(char &saida) {
+    bool itera(char* saida) {
         if (indice_itera < N) {
-            saida = v[indice_itera++];
+            *saida = v[indice_itera++];
             return true;
         }
         return false;
@@ -75,9 +75,9 @@ struct SacoVaiEVem {
         indice_volta = N - 1;
     }
 
-    bool iteravolta(char &saida) {
+    bool iteravolta(char* saida) {
         if (indice_volta >= 0) {
-            saida = v[indice_volta--];
+            *saida = v[indice_volta--];
             return true;
         }
         return false;
