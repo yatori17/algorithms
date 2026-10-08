@@ -28,6 +28,9 @@ void inverte5a(std::queue<char>* f) {
     }
 }
 
+// como o espaço auxiliar extra permitido é de tamanho constante, a inversão exige algoritmos de manuseamento
+// em cascata com complexidade de tempo O(N2), guardando o "último" elemento
+// temporariamente a cada repetição.
 void inverte5b(std::queue<char>* f) {
     std::queue<char> f1;
     std::queue<char> f2;

@@ -16,6 +16,12 @@ concept FilaTAD = requires (Agregado a, Tipo t) {
     { a.desenfileira() };
 };
 
+
+/*
+* Usando duas pilhas p1 e p2, o enfileira em p1 é O(1). O desenfileira
+* exige inverter a ordem passando tudo para p2 (se p2 estiver vazia), resultando em tempo amortizado
+* O(1), mas O(N) no pior caso.
+*/
 struct Fila2P {
 
     std::stack<char> p1;

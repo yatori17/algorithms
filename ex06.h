@@ -20,6 +20,11 @@ concept PilhaTAD = requires(Agregado a, Tipo b)
 };
 
 constexpr int MAX_N = 100000;
+/*Manter dois arranjos estáticos sincronizados, um para os valores regulares e outro
+que espelha o valor mínimo correspondente a cada nível da pilha.
+• Complexidade: Todas as operações (empilha, desempilha, topo e obterMinimo) mantêm
+custo O(1) rigoroso em tempo. O custo de espaço é estático O(MAX_N).
+*/
 struct PilhaMin {
     int elementos[MAX_N];
     int minimo[MAX_N];

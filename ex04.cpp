@@ -9,6 +9,7 @@
 #include <iostream>
 
 // 04.A
+// A complexidade eh 0(N) já que a gente usa o transbordamento direto
 void inverte4a(std::stack<char>* p) {
     std::queue<char> filaAux;
     while (!p->empty()) {
@@ -24,7 +25,7 @@ void inverte4a(std::stack<char>* p) {
     }
 }
 
-
+// A complexidade eh 0(N) já que a gente usa o transbordamento direto
 void inverte4b(std::stack<char>* p) {
     std::stack<char> p1; // primeira pilha auxiliar
     std::stack<char> p2; // segunda pilha auxiliar
@@ -45,6 +46,9 @@ void inverte4b(std::stack<char>* p) {
     }
 }
 
+// Como o espaço auxiliar extra permitido é de tamanho constante, a inversão exige algoritmos de manuseamento
+// em cascata com complexidade de tempo O(N2), guardando o "último" elemento
+// temporariamente a cada repetição.
 void inverte4c(std::stack<char>* p) {
     std::stack<char> p1;
     int n = p->size();

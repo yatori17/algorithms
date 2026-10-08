@@ -16,7 +16,11 @@ concept PilhaTAD = requires (Agregado a, Tipo t) {
     { a.desempilha() };
 };
 
-
+/*
+ * Ao usar duas filas f1 e f2, o empilha é O(1) (basta inserir na f1). O
+ * desempilha custa O(N), pois exige mover N − 1 elementos de f1 para f2 para isolar o último,
+ * removê-lo, e depois devolver os elementos.
+ */
 struct Pilha2F {
     std::queue<char> f1;
     std::queue<char> f2;

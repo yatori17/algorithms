@@ -39,6 +39,12 @@ struct Node {
     Node* prev;
 };
 
+// Deque implementado com lista duplamente ligada.
+// Mantemos ponteiros 'head' e 'tail' para garantir O(1) nas duas pontas.
+// Complexidades:
+// - Inserções e remoções (início/fim): O(1)
+// - Acessos (inicio/fim): O(1)
+// - Liberação total: O(N) devido à varredura dos nós.
 struct Deque {
     Node* head = nullptr; // Obrigatório para começar limpo!
     Node* tail = nullptr; // Obrigatório para começar limpo!
@@ -100,6 +106,9 @@ struct Deque {
     }
 };
 
+// Pilha (LIFO) construída por reutilização (adaptação) do Deque.
+// Todas as operações ocorrem estritamente no final para manter O(1).
+// - empilha / desempilha / topo: O(1)
 struct PilhaDeque {
     // Cria - Libera - Tamanho - Empilha - Desempilha -- topo
     Deque deque;
@@ -125,6 +134,9 @@ struct PilhaDeque {
     }
 };
 
+// Fila (FIFO) construída também por adaptação do Deque.
+// Insere no fim e remove do início para garantir eficiência.
+// - enfileira / desenfileira / frente: O(1)
 struct FilaDeque {
     Deque deque;
 

@@ -29,10 +29,9 @@ int applyOperator(int a, int b, char op) {
     }
 }
 
-
-// 7.b) Escreva um algoritmo que converte uma expressão aritmética parentizada usando as
-// 4 operações para a expressão correspondente em notação polonesa reversa.
-
+// 7.a O algoritmo varre a string O(E) (E = tamanho da expressão).
+// Se encontrar operando, acede aos valores das variáveis através de indexação ASCII básica (c -
+// ’A’) e empilha. Se operador, desempilha os dois últimos, avalia e empilha
 int avaliaRPN(char expressao[], int valores[]) {
     std::stack<int> q;
     for (int i = 0; expressao[i] != '\0'; i++) {
@@ -50,6 +49,12 @@ int avaliaRPN(char expressao[], int valores[]) {
     return q.top();
 }
 
+// 7.b) Escreva um algoritmo que converte uma expressão aritmética parentizada usando as
+// 4 operações para a expressão correspondente em notação polonesa reversa.
+/*Usando um mapeamento O(N) onde operandos vão direto para
+a saída, operadores vão para a pilha, e o fecha-parêntesis ) força a extração de um operador da
+pilha.
+*/
 void polonesa(char expressao[], int N, char saidaPolonesa[]) {
     std::stack<char> operators;
     int n_saida = 0;
@@ -80,7 +85,7 @@ int main() {
     int resultado = avaliaRPN(expressao, valores);
 
     std::cout << "Resultado da expressao RPN: " << resultado << std::endl;
-    // Deve imprimir exatamente -4 conforme o exemplo do enunciado!
+    // Deve imprimir exatamente 6 diferente do exemplo do enunciado!
 
     char expressao2[] = "((A+B)*(C-(F/D)))";
     int N2 = sizeof(expressao) - 1;
